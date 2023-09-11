@@ -11,10 +11,17 @@
   --width-side: 200px;
 }
 
+@font-face {
+  font-family: "MyFont";
+  src: url(./font/LightNovelPOPv2.otf);
+}
+
 body {
   display: flex;
 
   margin: 0;
+
+  font-family: "MyFont";
 }
 
 /* ---------------------------------------------- */
@@ -23,14 +30,37 @@ body {
 
 /* 背景 */
 .section_side {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: var(--width-side);
-  height: 100%;
+  min-width: var(--width-side);
 
   background-color: var(--color-sub);
+}
+
+.section_side .title {
+  display: flex;
+  width: calc(100% + 10px);
+  height: 150px;
+  position: fixed;
+  top: -60px;
+  left: -10px;
+  padding-left: 20px;
+
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+
+  justify-content: start;
+  align-items: end;
+  background: var(--color-main);
+
+  transform: rotate(355deg);
+}
+
+.section_side .title > span.date {
+  display: block;
+
+  margin-top: -10px;
+
+  font-size: 20px;
 }
 
 @media screen and (max-width: 700px) {
@@ -54,7 +84,7 @@ body {
 .section_main {
   display: table;
 
-  margin-left: var(--width-side);
+  margin-top: 100px;
   padding: 16px 32px;
 }
 
@@ -84,7 +114,7 @@ body {
   width: auto;
 
   margin-right: 12px;
-  padding: 6px 8px 2px 8px;
+  padding: 6px 12px;
 
   color: #fff;
   background-color: var(--color-main);
@@ -110,6 +140,7 @@ body {
 
   color: #fff;
   background-color: var(--color-main);
+  border: none;
   border-radius: 4px;
 }
 
